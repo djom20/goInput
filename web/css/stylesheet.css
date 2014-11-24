@@ -1,0 +1,17 @@
+.middle-box h1 {
+	font-size: 168px;
+	margin-left: -15px;
+}
+
+.widget-head-color-box {
+ 	border-radius: 0px; 
+ 	margin-top: 0px; 
+}
+
+.not-border {
+	border: none;
+}
+
+.border-bottom {
+	border-bottom: 1px solid #e7eaec;
+}
