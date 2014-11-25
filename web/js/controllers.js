@@ -3049,7 +3049,7 @@ function dashboardController() {
 
     var dataset = [
         {
-            label: "Numero de envios",
+            label: "Numero de Envios",
             grow:{stepMode:"linear"},
             data: data2,
             color: "#1ab394",
