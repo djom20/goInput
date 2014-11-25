@@ -34,9 +34,9 @@ function pageTitle($rootScope, $timeout) {
         link: function(scope, element) {
             var listener = function(event, toState, toParams, fromState, fromParams) {
                 // Default title - load on Dashboard 1
-                var title = 'C&Z Consultores';
+                var title = 'Go Input';
                 // Create your own title pattern
-                if (toState.data && toState.data.pageTitle) title = 'C&Z | ' + toState.data.pageTitle;
+                if (toState.data && toState.data.pageTitle) title = 'Go Input | ' + toState.data.pageTitle;
                 $timeout(function() {
                     element.text(title);
                 });

@@ -10,50 +10,28 @@
 function config($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/");
     $stateProvider
-        // .state('solicitudes', {
-        //     url: "/solicitudes",
-        //     controller: wizardCtrl,
-        //     data: { pageTitle: 'Solicitudes' }
-        // })
+        /* Dashboard */
+        .state('dashboard', {
+            url: "/",
+            controller: dashboardController,
+            templateUrl: "views/dashboard_1.html",
+        })
+
+        /* Proceso de Evaluacion*/
         .state('evaluacion', {
             url: "/evaluacion",
+            controller: evaluationController,
             templateUrl: "views/evaluacion.html",
-            controller: wizardCtrl,
             data: { pageTitle: 'Evaluacion' }
         })
+
+        /* Proceso de reclutamiento */
         .state('reclutamiento', {
             url: "/reclutamiento",
+            controller: recruitingController,
             templateUrl: "views/reclutamiento.html",
-            controller: wizardCtrl,
             data: { pageTitle: 'Reclutamiento' }
         })
-        .state('solicitudes_pendientes', {
-            url: "/solicitudes_pendientes",
-            templateUrl: "views/solicitudes_pendientes.html",
-            controller: wizardCtrl,
-            data: { pageTitle: 'Solicitudes Pendientes' }
-        })
-        .state('detalle_solicitud', {
-            url: "/detalle_solicitud",
-            templateUrl: "views/detalle_solicitud.html",
-            controller: wizardCtrl,
-            data: { pageTitle: 'Solicitudes Pendientes' }
-        })
-        // .state('evaluacion.paso_uno', {
-        //     url: "/paso_uno",
-        //     templateUrl: "views/evaluacion/paso_uno.html",
-        //     data: { pageTitle: 'Evaluacion' }
-        // })
-        // .state('evaluacion.paso_dos', {
-        //     url: "/paso_dos",
-        //     templateUrl: "views/evaluacion/paso_dos.html",
-        //     data: { pageTitle: 'Evaluacion' }
-        // })
-        // .state('evaluacion.paso_tres', {
-        //     url: "/paso_tres",
-        //     templateUrl: "views/evaluacion/paso_tres.html",
-        //     data: { pageTitle: 'Evaluacion' }
-        // })
         .state('reclutamiento.paso_uno', {
             url: "/paso_uno",
             templateUrl: "views/reclutamiento/paso_uno.html",
@@ -74,10 +52,91 @@ function config($stateProvider, $urlRouterProvider) {
             templateUrl: "views/reclutamiento/paso_cuatro.html",
             data: { pageTitle: 'Reclutamiento' }
         })
-        .state('dashboard', {
-            url: "/",
-            templateUrl: "views/dashboard_1.html",
+
+        /* Solicitudes */
+        .state('solicitudes', {
+            url: "/solicitudes",
+            controller: solicitudeController,
+            templateUrl: "views/solicitudes.html",
+            data: { pageTitle: 'Solicitudes Pendientes' }
         })
+        .state('detalle_solicitud', {
+            url: "/detalle_solicitud",
+            controller: solicitudeController,
+            templateUrl: "views/detalle_solicitud.html",
+            data: { pageTitle: 'Solicitudes Pendientes' }
+        })
+
+        /* Ordenes de Servicio */
+        .state('ordenes_servicio', {
+            url: "/ordenes_servicio",
+            controller: serviceOrdersController,
+            templateUrl: "views/ordenes_servicio.html",
+            data: { pageTitle: 'Ordenes de Servicio' }
+        })
+        .state('nueva_orden_servicio', {
+            url: "/nueva_orden_servicio",
+            controller: serviceOrdersController,
+            templateUrl: "views/nueva_orden_servicio.html",
+            data: { pageTitle: 'Ordenes de Servicio' }
+        })
+
+        /* Contactos */
+        .state('contactos', {
+            url: "/contactos",
+            controller: contactController,
+            templateUrl: "views/contacts.html",
+            data: { pageTitle: 'Contactos' }
+        })
+        .state('nuevo_contacto', {
+            url: "/nuevo_contacto",
+            controller: contactController,
+            templateUrl: "views/contact_new.html",
+            data: { pageTitle: 'Contactos' }
+        })
+
+        /* Empresas */
+        .state('empresas', {
+            url: "/empresas",
+            controller: enterpriseController,
+            templateUrl: "views/empresas.html",
+            data: { pageTitle: 'Empresas' }
+        })
+        .state('nueva_empresa', {
+            url: "/nueva_empresa",
+            controller: enterpriseController,
+            templateUrl: "views/nueva_empresa.html",
+            data: { pageTitle: 'Empresas' }
+        })
+
+        /* Perfiles */
+        .state('profile', {
+            url: "/profile",
+            controller: profileController,
+            templateUrl: "views/profile.html",
+            data: { pageTitle: 'Perfil' }
+        })
+        .state('myprofile', {
+            url: "/myprofile",
+            controller: myProfileController,
+            templateUrl: "views/personal-profile.html",
+            data: { pageTitle: 'Mi Perfil' }
+        })
+        // .state('evaluacion.paso_uno', {
+        //     url: "/paso_uno",
+        //     templateUrl: "views/evaluacion/paso_uno.html",
+        //     data: { pageTitle: 'Evaluacion' }
+        // })
+        // .state('evaluacion.paso_dos', {
+        //     url: "/paso_dos",
+        //     templateUrl: "views/evaluacion/paso_dos.html",
+        //     data: { pageTitle: 'Evaluacion' }
+        // })
+        // .state('evaluacion.paso_tres', {
+        //     url: "/paso_tres",
+        //     templateUrl: "views/evaluacion/paso_tres.html",
+        //     data: { pageTitle: 'Evaluacion' }
+        // })
         // .state('dashboard_2', {
         //     url: "/dashboard_2",
         //     templateUrl: "views/dashboard_2.html",
@@ -179,21 +238,6 @@ function config($stateProvider, $urlRouterProvider) {
         //     templateUrl: "views/form_editors.html",
         //     data: { pageTitle: 'Text editor' }
         // })
-        .state('contactos', {
-            url: "/contactos",
-            templateUrl: "views/contacts.html",
-            data: { pageTitle: 'Contactos' }
-        })
-        .state('profile', {
-            url: "/profile",
-            templateUrl: "views/profile.html",
-            data: { pageTitle: 'Perfil' }
-        })
-        .state('myprofile', {
-            url: "/myprofile",
-            templateUrl: "views/personal-profile.html.html",
-            data: { pageTitle: 'Mi Perfil' }
-        })
         // .state('projects', {
         //     url: "/projects",
         //     templateUrl: "views/projects.html",

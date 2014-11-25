@@ -1,0 +1,90 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Solicitudes</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="dashboard.html">Dashboard</a>
+            </li>
+            <li class="active">
+                <strong>Solicitudes</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="col-lg-3">
+    <div class="wrapper wrapper-content">
+        <div class="ibox float-e-margins">
+            <div class="ibox-content mailbox-content">
+                <div class="file-manager">
+                    <a class="btn btn-block btn-primary compose-mail" ui-sref="reclutamiento.paso_uno">Nuevo Reclutamiento</a>
+                    <a class="btn btn-block btn-info compose-mail">Nueva Evalucacion</a>
+                    <div class="space-25"></div>
+                    <h5>Etiquetas</h5>
+                    <ul class="folder-list m-b-md" style="padding: 0">
+                        <li><a ui-sref="inbox"> <i class="fa fa-inbox "></i> Pendientes <span class="label label-warning pull-right">1</span> </a></li>
+                        <li><a ui-sref="inbox"> <i class="fa fa-envelope-o"></i> Aceptadas <span class="label label-primary pull-right">1</span></a></li>
+                        <li><a ui-sref="inbox"> <i class="fa fa-envelope"></i> Negadas <span class="label label-danger pull-right">1</span></a></li>
+                        <li><a ui-sref="inbox"> <i class="fa fa-file-text-o"></i> Por revision <span class="label label-info pull-right">1</span></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-9">
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Listado de Solicitudes</h5>
+                </div>
+                <div class="mail-box">
+                    <table class="table table-hover table-mail">
+                        <tbody>
+                            <tr class="unread">
+                                <td class="check-mail">
+                                    <span class="label label-warning">Pendiente</span>
+                                </td>
+                                <td class="mail-ontact"><a ui-sref="detalle_solicitud">Jack Nowak</a></td>
+                                <td class="mail-subject"><a ui-sref="detalle_solicitud">Aldus PageMaker including versions of Lorem Ipsum.</a></td>
+                                <td class=""></td>
+                                <td class="text-right mail-date">8.22 PM</td>
+                            </tr>
+                            <tr class="read">
+                                <td class="check-mail">
+                                    <span class="label label-primary">Aceptada</span>
+                                </td>
+                                <td class="mail-ontact"><a ui-sref="detalle_solicitud">Mailchip</a></td>
+                                <td class="mail-subject"><a ui-sref="detalle_solicitud">There are many variations of passages of Lorem Ipsum.</a></td>
+                                <td class=""></td>
+                                <td class="text-right mail-date">Mar 22</td>
+                            </tr>
+                            <tr class="read">
+                                <td class="check-mail">
+                                    <span class="label label-danger">Negada</span>
+                                </td>
+                                <td class="mail-ontact"><a ui-sref="detalle_solicitud">Mailchip</a></td>
+                                <td class="mail-subject"><a ui-sref="detalle_solicitud">There are many variations of passages of Lorem Ipsum.</a></td>
+                                <td class=""></td>
+                                <td class="text-right mail-date">Mar 22</td>
+                            </tr>
+                            <tr class="read">
+                                <td class="check-mail">
+                                    <span class="label label-info">Por revision</span>
+                                </td>
+                                <td class="mail-ontact"><a ui-sref="detalle_solicitud">Mailchip</a></td>
+                                <td class="mail-subject"><a ui-sref="detalle_solicitud">There are many variations of passages of Lorem Ipsum.</a></td>
+                                <td class=""></td>
+                                <td class="text-right mail-date">Mar 22</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

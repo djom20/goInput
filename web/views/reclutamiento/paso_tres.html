@@ -4,13 +4,13 @@
         <div class="col-lg-12">
             <div class="form-group">
                 <label>Nivel Academico *</label>
-                <select chosen id="states" class="chosen-select form-control m-b" style="display: block;" tabindex="4" ng-model="state" ng-options="s for s in main.states">
+                <select chosen id="nivel_academico" class="chosen-select form-control m-b" style="display: block;" tabindex="4" ng-model="state" ng-options="s for s in main.states">
                 </select>
             </div>
             <div class="hr-line-dashed"></div>
             <div class="form-group">
                 <label>Titulo Academico *</label>
-                <select chosen id="states" class="chosen-select form-control m-b" style="display: block;" tabindex="4" ng-model="state" ng-options="s for s in main.states">
+                <select chosen id="states3" class="chosen-select form-control m-b" style="display: block;" tabindex="4" ng-model="state3" ng-options="s for s in main.states">
                 </select>
             </div>
             <div class="hr-line-dashed"></div>
@@ -18,7 +18,7 @@
                 <div class="col-md-8">
                     <div class="form-group">
                         <label>Idioma *</label>
-                        <select chosen id="states" class="chosen-select form-control m-b" style="display: block;" tabindex="4" ng-model="state" ng-options="s for s in main.states">
+                        <select chosen id="states2" class="chosen-select form-control m-b" style="display: block;" tabindex="4" ng-model="state2" ng-options="s for s in main.states">
                         </select>
                     </div>
                 </div>
@@ -51,3 +51,8 @@
     <a ui-sref="reclutamiento.paso_dos" class="btn btn-default">Anterior</a>
     <a ui-sref="reclutamiento.paso_cuatro" class="btn btn-primary">Siguiente</a>
 </fieldset>
+<script>
+    setTimeout(function(){
+        $('#nivel_academico').focus();
+    }, 1000);
+</script>

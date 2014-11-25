@@ -64,7 +64,7 @@
 
 <!-- ControllerAs syntax -->
 <!-- Main controller with serveral data used in Inspinia theme on diferent view -->
-<body ng-controller="MainCtrl as main">
+<body ng-controller="MainCtrl as main" class="pace-done mini-navbar">
 
 <!-- Wrapper-->
 <div id="wrapper">
@@ -176,7 +176,7 @@
 <script src="js/plugins/fullcalendar/fullcalendar.min.js"></script>
 
 <!-- Custom and plugin javascript -->
-<script src="js/inspinia.js"></script>
+<!-- <script src="js/inspinia.js"></script> -->
 
 <!-- Angular scripts-->
 <script src="js/angular/angular.min.js"></script>
@@ -208,29 +208,29 @@
 <script src="js/services.js"></script>
 
 <script>
-    var t1 = false;
-    var t2 = false;
-    var t3 = false;
-    $(document).keydown(function(tecla){
-        if (tecla.keyCode == 17) { // Crtl
-            t1 = true;
-        }else if(tecla.keyCode == 18) { // Alt
-            t2 = true;
-        }else if(tecla.keyCode == 76) { // Letra l
-            t3 = true;
-        }
+    // var t1 = false;
+    // var t2 = false;
+    // var t3 = false;
+    // $(document).keydown(function(tecla){
+    //     if (tecla.keyCode == 17) { // Crtl
+    //         t1 = true;
+    //     }else if(tecla.keyCode == 18) { // Alt
+    //         t2 = true;
+    //     }else if(tecla.keyCode == 76) { // Letra l
+    //         t3 = true;
+    //     }
 
-        if(t1){
-            if(t2){
-                if(t3){
-                    t1 = false;
-                    t2 = false;
-                    t3 = false;
-                    location.href = './lockscreen.html';
-                }
-            }
-        }
-    });
+    //     if(t1){
+    //         if(t2){
+    //             if(t3){
+    //                 t1 = false;
+    //                 t2 = false;
+    //                 t3 = false;
+    //                 location.href = './lockscreen.html';
+    //             }
+    //         }
+    //     }
+    // });
 </script>
 
 </body>
