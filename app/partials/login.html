@@ -10,19 +10,21 @@
 		</div>
 		<form action="">
 			<div class="form-group">
-				<input class="form-control" type="text" placeholder="Username">
+				<input autofocus class="form-control" type="text" placeholder="Username">
 			</div>
 			<div class="form-group">
 				<input class="form-control" type="password" placeholder="Password">
 			</div>
-			<div class="form-group text-center">
-				<button class="btn btn-info fullwidth">Login</button>
+			<div class="form-group text-center" ng-controller="LoginCtrl">
+				<button ng-click="onLogin()" class="btn btn-info fullwidth">Login</button>
 			</div>
 			<div class="form-group text-center">
 				<label>Or</label>
 			</div>
 			<div class="form-group text-center">
-				<button class="btn btn-danger fullwidth">Login with Google</button>
+				<button class="btn btn-danger fullwidth">
+					<i class="fa fa-google-plus pull-left m-t-xs"></i> Login with Google
+				</button>
 			</div>
 		</form>
 		<a href="" class="pull-left">Sign Up</a>

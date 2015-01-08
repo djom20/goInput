@@ -11,6 +11,7 @@ body {
   color: #676a6c;
   font-family: 'Open Sans', helvetica, arial, sans-serif;
   background-color: #468cc8;
+  overflow-x: hidden;
 }
 span.navy {
   color: #1ab394;
@@ -523,6 +524,9 @@ fieldset[disabled] .btn-primary.active {
 }
 /* MARGINS & PADDINGS
 -------------------------------------------------- */
+.p-n {
+  padding: 0 !important;
+}
 .p-xxs {
   padding: 5px;
 }
@@ -847,6 +851,254 @@ section.floating a, a:hover {
   color: #fff;
 }
 
-button.fullwidth {
+.fullwidth {
+  width: 100% !important;
+}
+
+/* INBOX */
+.page header {
+  background-color: #fff;
+  padding: 10px;
+  position: relative;
+  text-align: center;
   width: 100%;
+  z-index: 5;
+}
+
+.page article {
+  background-color: transparent;
+  /*border-radius: 4px;*/
+  /*margin: 10px;*/
+  /*margin-bottom: 70px;
+  margin-top: 90px;*/
+}
+
+.page article, footer {
+  padding: 10px;
+}
+
+.page footer {
+  background-color: #fff;
+  min-height: 45px;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.main-menu {
+  margin-top: 9px;
+}
+
+ul.list {
+  padding: 0;
+}
+
+ul.list li {
+  list-style: none;
+}
+
+ul.list li:last-child a {
+  border-radius: 0 0 4px 4px;
+}
+
+ul.list li > a {
+  color: #333;
+  border-color: #ddd;
+  background-color: #fff;
+  color: #444;
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin: -1px;
+  padding: 16px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 16px;
+}
+
+ul.list li > a {
+  padding-left: 42px;
+  cursor: pointer;
+}
+
+ul.list li > a i {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  max-width: 40px;
+  max-height: 40px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+ul.list li > a h4, p {
+  font-size: 16px;
+  margin: 0 0 4px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.navbar-form {
+  margin-bottom: 0;
+  margin-right: -2px;
+  padding: 0;
+}
+
+.navbar-form input.search {
+  /*padding-right: 44px;*/
+  border: 0 !important;
+  color: #111;
+  display: inline;
+  font-size: 14px;
+  height: 34px;
+  line-height: 16px;
+  padding-left: 0;
+  padding-top: 2px;
+  vertical-align: middle;
+  width: 99%;
+}
+
+input.search:focus, input.search:hover{
+  outline: 0;
+}
+
+.navbar-form i {
+  color: #aaa;
+  padding-right: 6px;
+}
+
+label.search {
+  align-items: center;
+  background-color: #fff;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-color: #ddd;
+  border-style: solid;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-width: 1px;
+  color: #444;
+  display: block;
+  font-size: 16px;
+  margin-bottom: -1px;
+  margin-left: 0;
+  margin-right: 0;
+  margin: -1px;
+  overflow: hidden;
+  padding: 16px;
+  padding: 6px 0 5px 16px;
+  position: relative;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+@media screen and (max-width: 768px){
+  .navbar-form {
+    padding: 0px 15px;
+    margin-right: -17px;
+  }
+}
+
+
+/* SIDEMENU */
+
+#page-top {
+  position: relative;
+}
+
+#mycontainer {
+  width: 100%;
+  height: 100%;
+  /*box-sizing: border-box;
+  -moz-box-sizing: border-box;*/
+  position: relative;
+}
+
+.sidemenu {
+  background: transparent;
+  width: 250px;
+  height: 100%;
+  top: 0px;
+  left: -251px;
+  padding: 0 0 10px 0;
+  text-align: center;
+  position: fixed;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+#page-top._open {
+  left: 251px;
+  transition:left 1s;
+  -webkit-transition:left 1s;
+  -moz-transition:left 1s;
+  -o-transition:left 1s;
+  -ms-transition:left 1s;
+}
+
+#page-top._closed {
+  left: 0px;
+  transition:left 1s;
+  -webkit-transition:left 1s;
+  -moz-transition:left 1s;
+  -o-transition:left 1s;
+  -ms-transition:left 1s;
+}
+
+._open {
+  left: 0;
+  transition:left 1s;
+  -webkit-transition:left 1s;
+  -moz-transition:left 1s;
+  -o-transition:left 1s;
+  -ms-transition:left 1s;
+}
+
+._closed {
+  left: -260px;
+  transition:left 1s;
+  -webkit-transition:left 1s;
+  -moz-transition:left 1s;
+  -o-transition:left 1s;
+  -ms-transition:left 1s;
+}
+
+.main-menu:hover{
+  left :0px;
+}
+
+.sidemenu header{
+  background-color: #fff;
+  border-color: #ddd;
+  border-style: solid;
+  border-width: 1px;
+  margin-right: -1px;
+  margin-top: 0;
+  padding: 16px;
+  text-align: center;
+}
+
+.dont-list {
+  padding-left: 15px !important;
+  padding-right: 42px !important;
+}
+
+.dont-list i {
+  left: initial !important;
+  right: 16px;
+}
+
+ul.list li:last-child a.dont-list {
+  border-radius: 0;
+}
+
+/* FORM */
+
+.fillForm {
+  background-color: #fff;
+  padding: 20px;
 }
