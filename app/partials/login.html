@@ -10,24 +10,24 @@
 		</div>
 		<form action="">
 			<div class="form-group">
-				<input autofocus class="form-control" type="text" placeholder="Username">
+				<input autofocus class="form-control" type="text" placeholder="{{ lang.login_username }}">
 			</div>
 			<div class="form-group">
-				<input class="form-control" type="password" placeholder="Password">
+				<input class="form-control" type="password" placeholder="{{ lang.login_password }}">
 			</div>
 			<div class="form-group text-center" ng-controller="LoginCtrl">
-				<button ng-click="onLogin()" class="btn btn-info fullwidth">Login</button>
+				<button ng-click="onLogin()" class="btn btn-info fullwidth">{{ lang.login_button }}</button>
 			</div>
 			<div class="form-group text-center">
-				<label>Or</label>
+				<label>{{ lang.login_or }}</label>
 			</div>
 			<div class="form-group text-center">
-				<button class="btn btn-danger fullwidth">
-					<i class="fa fa-google-plus pull-left m-t-xs"></i> Login with Google
-				</button>
+				<div ng-google-login></div>
 			</div>
 		</form>
-		<a href="" class="pull-left">Sign Up</a>
-		<a href="" class="pull-right">Need Help?</a>
+		<a href="#/signup" class="pull-left">{{ lang.login_linkTo_signup }}</a>
+		<a href="" class="pull-right">{{ lang.login_linkTo_help }}</a>
 	</div>
 </div>
+
+<div ng-translate></div>

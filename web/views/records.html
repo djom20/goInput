@@ -1,0 +1,64 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Registros</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="dashboard.html">Dashboard</a>
+            </li>
+            <li>
+                <a href="#/objetos">Objetos</a>
+            </li>
+            <li class="active">
+                <strong>Registros</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content">
+    <div class="row animated fadeInRight">
+        <div class="ibox float-e-margins">
+            <div class="ibox-content" ng-init='getRecords()'>
+                <div class="row">
+				    <div class="col-lg-12">
+				        <div class="m-b-md">
+				            <h2>Detalle del Registro</h2>
+				        </div>
+				    </div>
+				</div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <dl class="dl-horizontal">
+                            <dt>Pagina Actual:</dt>
+                            <dd> {{ records.current_page }}</dd>
+                            <dt>Total de paginas:</dt>
+                            <dd> {{ records.total_pages }}</dd>
+                            <dt>Total registros:</dt>
+                            <dd> {{ records.total_records }}</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div>
+                    <div class="feed-activity-list">
+                        <div class="feed-element" ng-repeat='obj in records.records'>
+                            <div class="media-body ">
+                                <small class="pull-right text-navy"><a href="mailto:{{ obj.field_5_raw.email }}">{{ obj.field_5_raw.email }}</a></small>
+                                <strong>{{ obj.id }}</strong><br>
+                                <label>{{ obj.account_status }}</label><br>
+                                <label>{{ obj.field_4 }}</label><br>
+                                <label>{{ obj.field_5_raw.email }}</label><br>
+                                <br>
+                                <div class="actions pull-left">
+							        <a href="" class="btn btn-primary btn-sm"><i class="fa fa-save"></i> Guardar </a>
+							        <a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i> Eliminar </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

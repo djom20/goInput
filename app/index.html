@@ -8,7 +8,7 @@
         <meta name="author" content="">
         <!-- Add Your favicon here -->
         <link rel="icon" href="fav.ico" type="image/icon">
-        <title>Input</title>
+        <title>{{title}}</title>
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -22,17 +22,25 @@
         <!-- <base href="/input/">  -->
         <!-- <base href="/">  -->
     </head>
-    <body id="page-top">
+    <body id="page-top" class="_closed">
         <ng-include src="'partials/sidemenu.html'"></ng-include>
-        <div id="mycontainer" ng-view></div>
+        <div id="mycontainer" ui-view></div>
 
+        <!-- Libs -->
         <script src="js/jquery-2.1.1.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/angular.min.js"></script>
         <script src="js/angular-route.min.js"></script>
+        <script src="js/angular-ui-router.min.js"></script>
+
+        <!-- Helpers -->
+        <script src="helpers/config.js"></script>
+        <script src="js/focus.js"></script>
+        
+        <!-- App -->
         <script src="js/app.js"></script>
         <script src="js/controllers.js"></script>
-        <script src="js/goInput.js"></script>
-        <script src="helpers/config.js"></script>
+        <script src="js/directives.js"></script>
+        <script src="js/factorys.js"></script>
     </body>
 </html>

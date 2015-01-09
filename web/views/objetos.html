@@ -1,0 +1,46 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Objetos</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="dashboard.html">Dashboard</a>
+            </li>
+            <li class="active">
+                <strong>Objetos</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content">
+    <div class="row animated fadeInRight">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Listado de Objetos</h5>
+            </div>
+            <div class="ibox-content">
+                <div>
+                    <div class="feed-activity-list" ng-init='main()'>
+                        <div class="feed-element" ng-model='objects' ng-repeat='object in objects'>
+                            <!-- <a href="" class="pull-left">
+                                <img alt="image" class="img-circle" src="img/a1.jpg">
+                            </a> -->
+                            <div class="media-body ">
+                                <small class="pull-right text-navy">1m ago</small>
+                                <strong>{{object.name}}</strong>
+                                <br>
+                                <!-- <small class="text-muted">Today 4:21 pm - 12.06.2014</small> -->
+                                <div class="actions">
+                                    <a href="#/fields/{{object.key}}" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Campos</a>
+                                    <a href="#/records/{{object.key}}" class="btn btn-xs btn-warning"><i class="fa fa-book"></i> Registros</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

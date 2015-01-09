@@ -1,34 +1,35 @@
+'use strict';
+
 var controllers = angular.module('controllers', []);
 
-controllers.controller('IndexCtrl', ['$scope',
-    function($scope) {
+controllers.controller('IndexCtrl', ['$scope', '$rootScope',
+    function($scope, $rootScope) {
         console.log('Init controller');
 
         $scope.load = function(){
-            // $scope.lang = window.lang;
+            console.log('status', $splash_status);
 
-            // if(localStorage.lang == null){
-            //     $scope.lang         = $scope.lang.es;
-            //     localStorage.lang   = 'es';
-            // }else{
-            //     $scope.lang = $scope.lang[localStorage.lang];
-            // }
-
-            setTimeout(function(){
-                console.log('Init setTimeout');
-                $('.splash_screen').fadeOut(2000, function(){
-                    console.log('Hide Logo');
-                    $('.login').fadeIn(1000);
-                });
-            }, 1000);
-        };
-
-        $scope.changeLang = function(lang){
-            if(lang === 'es' || lang === 'en'){
-                $scope.lang         = $scope.lang[lang];
-                localStorage.lang   = lang;
+            if(!$splash_status){
+                $splash_status = true;
+                setTimeout(function(){
+                    console.log('Init setTimeout');
+                    $('.splash_screen').fadeOut(2000, function(){
+                        console.log('Hide Logo');
+                        $('.login').fadeIn(1000);
+                    });
+                }, 1000);
+            } else {
+                $('.splash_screen').css('display', 'none');
+                $('.login').css('display', 'block');
             }
         };
+
+        // $scope.changeLang = function(lang){
+        //     if(lang === 'es' || lang === 'en'){
+        //         $scope.lang         = $scope.lang[lang];
+        //         localStorage.lang   = lang;
+        //     }
+        // };
 
         $scope.navigate = function(id){
             $('html, body').stop().animate({
@@ -48,6 +49,14 @@ controllers.controller('LoginCtrl', ['$scope', '$location',
                 console.log('Reload Page');
                 $location.path('/inbox').replace();
             // }, 100);
+        };
+    }]
+);
+
+controllers.controller('SignupCtrl', ['$scope', '$location',
+    function($scope, $location) {
+        $scope.onLogin = function(){
+            console.log('Init controller');
         };
     }]
 );
@@ -140,6 +149,17 @@ controllers.controller('FormsCtrl', ['$scope', '$location',
 controllers.controller('FormCtrl', ['$scope', '$location',
     function($scope, $location) {
         console.log('Init controller');
+    }]
+);
+
+controllers.controller('IdiomsCtrl', ['$scope', '$rootScope', '$location',
+    function($scope, $rootScope, $location) {
+        $scope.changeLang = function(lang){
+            if(lang === 'es' || lang === 'en'){
+                $rootScope.lang     = $lang[lang];
+                localStorage.lang   = lang;
+            }
+        };
     }]
 );
 

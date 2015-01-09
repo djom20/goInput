@@ -2667,6 +2667,7 @@ function wizardCtrl($scope) {
         min: 0,
         max: 100,
         from: 0,
+        type: 'double',
         postfix: "%",
         prettify: false,
         hasGrid: true
@@ -2880,7 +2881,7 @@ function chartJsCtrl() {
         barStrokeWidth : 2,
         barValueSpacing : 5,
         barDatasetSpacing : 1,
-    };
+};
 
     /**
      * Data for Bar chart
@@ -2958,8 +2959,13 @@ function chartJsCtrl() {
         datasetStrokeWidth : 2,
         datasetFill : true,
     };
+
+
 };
 
+
+
+// ================================= added
 
 function contactController() {
 
@@ -3047,49 +3053,46 @@ function dashboardController() {
     ];
 
 
-    var dataset = [
-        {
-            label: "Numero de Envios",
-            grow:{stepMode:"linear"},
-            data: data2,
-            color: "#1ab394",
-            bars: {
-                show: true,
-                align: "center",
-                barWidth: 24 * 60 * 60 * 600,
-                lineWidth: 0
-            }
-
+    var dataset = [{
+        label: "Numero de Envios",
+        grow: {
+            stepMode: "linear"
         },
-        {
-            label: "Numero de Formularios",
-            grow:{stepMode:"linear"},
-            data: data1,
-            yaxis: 2,
-            color: "#464f88",
-            lines: {
-                lineWidth: 1,
-                show: true,
-                fill: true,
-                fillColor: {
-                    colors: [
-                        {
-                            opacity: 0.2
-                        },
-                        {
-                            opacity: 0.2
-                        }
-                    ]
-                }
-            },
-            splines: {
-                show: false,
-                tension: 0.6,
-                lineWidth: 1,
-                fill: 0.1
-            },
+        data: data2,
+        color: "#1ab394",
+        bars: {
+            show: true,
+            align: "center",
+            barWidth: 24 * 60 * 60 * 600,
+            lineWidth: 0
         }
-    ];
+    }, {
+        label: "Numero de Formularios",
+        grow: {
+            stepMode: "linear"
+        },
+        data: data1,
+        yaxis: 2,
+        color: "#464f88",
+        lines: {
+            lineWidth: 1,
+            show: true,
+            fill: true,
+            fillColor: {
+                colors: [{
+                    opacity: 0.2
+                }, {
+                    opacity: 0.2
+                }]
+            }
+        },
+        splines: {
+            show: false,
+            tension: 0.6,
+            lineWidth: 1,
+            fill: 0.1
+        },
+    }];
 
 
     var options = {
@@ -3104,25 +3107,22 @@ function dashboardController() {
             axisLabelPadding: 10,
             color: "#838383"
         },
-        yaxes: [
-            {
-                position: "left",
-                max: 1070,
-                color: "#838383",
-                axisLabelUseCanvas: true,
-                axisLabelFontSizePixels: 12,
-                axisLabelFontFamily: 'Arial',
-                axisLabelPadding: 3
-            },
-            {
-                position: "right",
-                clolor: "#838383",
-                axisLabelUseCanvas: true,
-                axisLabelFontSizePixels: 12,
-                axisLabelFontFamily: ' Arial',
-                axisLabelPadding: 67
-            }
-        ],
+        yaxes: [{
+            position: "left",
+            max: 1070,
+            color: "#838383",
+            axisLabelUseCanvas: true,
+            axisLabelFontSizePixels: 12,
+            axisLabelFontFamily: 'Arial',
+            axisLabelPadding: 3
+        }, {
+            position: "right",
+            clolor: "#838383",
+            axisLabelUseCanvas: true,
+            axisLabelFontSizePixels: 12,
+            axisLabelFontFamily: ' Arial',
+            axisLabelPadding: 67
+        }],
         legend: {
             noColumns: 1,
             labelBoxBorderColor: "#000000",
@@ -3139,12 +3139,78 @@ function dashboardController() {
         return new Date(year, month - 1, day).getTime();
     }
 
+    var submission = [
+        {
+            form: 'Crear Proyecto',
+            time: '12/07/2014 10:15am',
+            owner: 'img/a2.jpg',
+            comments: 'Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here.'
+        },
+        {
+            form: 'Crear Proyecto',
+            time: '12/07/2014 10:15am',
+            owner: 'img/a1.jpg',
+            comments: 'Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here.'
+        },
+        {
+            form: 'Crear Proyecto',
+            time: '12/07/2014 10:15am',
+            owner: 'img/a3.jpg',
+            comments: 'Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here.'
+        },
+        {
+            form: 'Crear Proyecto',
+            time: '12/07/2014 10:15am',
+            owner: 'img/a2.jpg',
+            comments: 'Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here.'
+        },
+        {
+            form: 'Crear Proyecto',
+            time: '12/07/2014 10:15am',
+            owner: 'img/a1.jpg',
+            comments: 'Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here.'
+        },
+        {
+            form: 'Crear Proyecto',
+            time: '12/07/2014 10:15am',
+            owner: 'img/a3.jpg',
+            comments: 'Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here.'
+        }
+    ];
+
+    function lifeEnvios() {
+        setTimeout(function() {
+            if(submission.length > 0){
+                submission.splice(1, 1);
+                console.log(submission);
+                console.log('Quitando Submission');
+                lifeEnvios();
+            }
+        }, 10000);
+    }
+
+    function addEnvios () {
+        setTimeout(function() {
+            submission.push({
+                form: 'Crear Proyecto #2',
+                time: '12/07/2014 10:15am',
+                owner: 'img/a3.jpg',
+                comments: 'Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here.'
+            });
+            addEnvios();
+        }, 6000);
+    }
+
     /**
      * Definition of variables
      * Flot chart
      */
     this.flotData = dataset;
     this.flotOptions = options;
+    this.submission = submission;
+
+    lifeEnvios();
+    addEnvios();
 };
 
 function evaluationController() {
@@ -3163,27 +3229,19 @@ function recruitingController() {
 
 };
 
+
+
+
+
+
+
+
 /**
  *
  * Pass all functions into module
  */
 angular
     .module('inspinia')
-    .controller('MainCtrl ', MainCtrl)
-    .controller('dashboardFlotOne', dashboardFlotOne)
-    .controller('dashboardFlotTwo', dashboardFlotTwo)
-    .controller('dashboardMap', dashboardMap)
-    .controller('flotChartCtrl', flotChartCtrl)
-    .controller('morrisChartCtrl', morrisChartCtrl)
-    .controller('rickshawChartCtrl', rickshawChartCtrl)
-    .controller('widgetFlotChart', widgetFlotChart)
-    .controller('modalDemoCtrl', modalDemoCtrl)
-    .controller('ionSlider', ionSlider)
-    .controller('wizardCtrl', wizardCtrl)
-    .controller('CalendarCtrl', CalendarCtrl)
-    .controller('chartJsCtrl', chartJsCtrl)
-
-    // Mis controladores
     .controller('contactController', contactController)
     .controller('enterpriseController', enterpriseController)
     .controller('profileController', profileController)
@@ -3192,4 +3250,11 @@ angular
     .controller('evaluationController', evaluationController)
     .controller('serviceOrdersController', serviceOrdersController)
     .controller('solicitudeController', solicitudeController)
-    .controller('recruitingController', recruitingController)
+    .controller('recruitingController', recruitingController)    
+    //jgomez resources
+    .controller('objCtrl', objCtrl) 
+
+    angular
+        .module('inspinia') 
+        .factory('knack', knackFactory);
+
